@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PictureShowView">
+        <!--图片总数-->
+        <attr name="ps_count" format="integer" />
+        <!--列数-->
+        <attr name="ps_column" format="integer" />
+        <!--item间隔-->
+        <attr name="ps_divider_size" format="dimension" />
+        <!--删除按钮图片-->
+        <attr name="ps_icon_delete" format="reference" />
+        <!--删除按钮尺寸-->
+        <attr name="ps_icon_delete_size" format="dimension" />
+        <!--新增按钮图片-->
+        <attr name="ps_icon_add" format="reference" />
+        <!--是否显示添加按钮-->
+        <attr name="ps_show_add" format="boolean"/>
+        <!--是否显示删除按钮-->
+        <attr name="ps_show_del" format="boolean"/>
+    </declare-styleable>
+</resources>
