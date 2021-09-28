@@ -13,7 +13,7 @@ allprojects {
 ```
 2.添加
 ```java
-implementation 'com.github.summersrest:PictureShow:v1.0.0'
+implementation 'com.github.summersrest:PictureShow:v1.0.1'
 ```
 ## **2、使用**
 ### 1、xml中使用
@@ -49,13 +49,17 @@ pictureView.setOnPictureAddListener(new OnPictureAddListener() {
     @Override
     public void onAdd() {
         //添加单张图片
-        pictureView.add(path1);
-        //添加单张图片，并且显示删除按钮（会覆盖xml中的全局配置）
-        pictureView.add(path2, true);
-        //添加多张按钮
-        pictureView.add(Arrays.asList(path3, path4));
-        //添加多张图片，并且显示删除按钮
-        pictureView.add(Arrays.asList(path5, path6), true);
+	pictureView.add(path1);
+	pictureView.clearAndAdd(path1);
+	//添加单张图片，并且显示删除按钮（会覆盖xml中的全局配置）
+	pictureView.add(path2, true);
+	pictureView.clearAndAdd(path2, true);
+	//添加多张按钮
+	pictureView.add(Arrays.asList(path3, path4));
+	pictureView.clearAndAdd(Arrays.asList(path3, path4));
+	//添加多张图片，并且显示删除按钮
+	pictureView.add(Arrays.asList(path5, path6), true);
+	pictureView.clearAndAdd(Arrays.asList(path5, path6), true);
     }
 });
 
