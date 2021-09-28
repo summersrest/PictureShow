@@ -1,5 +1,6 @@
 # PictureShow
 选择图片后展示图片
+![1](https://github.com/summersrest/PictureShow/blob/master/img/S10928-10012819.png)
 ## **1、导入**
  1.引入jitpack
  ```java
