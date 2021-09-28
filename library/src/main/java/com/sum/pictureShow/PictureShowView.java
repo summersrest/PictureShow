@@ -213,6 +213,20 @@ public class PictureShowView extends RecyclerView {
     }
 
     /**
+     * 先清空再添加
+     *
+     * @param path 图片路径
+     */
+    public void clearAndAdd(String path) {
+        data.clear();
+        data.add(new ItemPicture(path, iconDel, isDelShow));
+        if (isAddShow) {
+            data.add(new ItemPicture(ADD, iconAdd));
+        }
+        adapter.notifyDataSetChanged();
+    }
+
+    /**
      * 添加图片
      *
      * @param path      图片路径
@@ -225,6 +239,21 @@ public class PictureShowView extends RecyclerView {
             data.add(new ItemPicture(ADD, iconAdd));
         } else {
             data.add(new ItemPicture(path, iconDel, isDelShow));
+        }
+        adapter.notifyDataSetChanged();
+    }
+
+    /**
+     * 先清空再添加图片
+     *
+     * @param path      图片路径
+     * @param isDelShow 是否显示删除按钮
+     */
+    public void clearAndAdd(String path, boolean isDelShow) {
+        data.clear();
+        data.add(new ItemPicture(path, iconDel, isDelShow));
+        if (isAddShow) {
+            data.add(new ItemPicture(ADD, iconAdd));
         }
         adapter.notifyDataSetChanged();
     }
@@ -250,6 +279,24 @@ public class PictureShowView extends RecyclerView {
     }
 
     /**
+     * 先清空再添加图片
+     *
+     * @param paths 图片路径
+     */
+    public void clearAndAdd(List<String> paths) {
+        data.clear();
+        if (null != paths && paths.size() > 0) {
+            for (String path : paths) {
+                data.add(new ItemPicture(path, iconDel, isDelShow));
+            }
+        }
+        if (isAddShow) {
+            data.add(new ItemPicture(ADD, iconAdd));
+        }
+        adapter.notifyDataSetChanged();
+    }
+
+    /**
      * 添加图片
      *
      * @param paths     图片路径
@@ -259,6 +306,24 @@ public class PictureShowView extends RecyclerView {
         if (isAddShow) {
             data.remove(data.size() - 1);
         }
+        if (null != paths && paths.size() > 0) {
+            for (String path : paths) {
+                data.add(new ItemPicture(path, iconDel, isDelShow));
+            }
+        }
+        if (isAddShow) {
+            data.add(new ItemPicture(ADD, iconAdd));
+        }
+        adapter.notifyDataSetChanged();
+    }
+
+    /**
+     * 先清空再添加图片
+     * @param paths
+     * @param isDelShow
+     */
+    public void clearAndAdd(List<String> paths, boolean isDelShow) {
+        data.clear();
         if (null != paths && paths.size() > 0) {
             for (String path : paths) {
                 data.add(new ItemPicture(path, iconDel, isDelShow));
